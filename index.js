@@ -8,7 +8,8 @@ const io = socketIo(server);
 
 // Handle socket connections
 io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+  // console.log('A user connected:', socket.id);
+      io.to(socket.id).emit('SocketID', socket.id);
 
   // Handle incoming messages
   socket.on('message', (message) => {
