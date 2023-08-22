@@ -19,9 +19,9 @@ io.on('connection', (socket) => {
   });
   
   socket.on('privateMessage', ({ recipientUserId, message }) => {
-    const recipientSocketId = users[recipientUserId];
-    if (recipientSocketId) {
-      io.to(recipientSocketId).emit('newMessage', message);
+    console.log(recipientUserId)
+    if (recipientUserId) {
+      io.to(recipientUserId).emit('newMessage', message);
     }
   });
 
