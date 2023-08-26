@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
 
  socket.on('checkUserStatus', (id) => {
 
-   const isOnline = usersConnected.find((i)=>i ==id) ?
+   const isOnline = usersConnected.find((i)=>i ==id) ?true :false
    
    
       io.to(socket.id).emit('userStatus', isOnline)
